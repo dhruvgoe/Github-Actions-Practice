@@ -1,0 +1,19 @@
+name: myFirsytWorkflow      # Name of the workflow
+
+on: workflow_dispatch       # This will trigger the workflow manually from the Actions tab in GitHub
+
+jobs:
+    myFirstJob:
+        runs-on: ubuntu-latest      # This specifies the type of runner to run the job on. In this case, it will run on the latest version of Ubuntu.
+        steps:                      # This is where you define the steps that will be executed as part of the job.  
+            - name: myFirstStep
+              run: echo "Hello World, This is my First job in my first workflow"
+
+            - name: mySecondStep-Calculationn
+              run: echo "Sum of 2 and 3 is $((2+3))"
+
+            - name: myThirdStep-ListFiles
+              run: ls -la
+
+            - name: myFourthStep-Show Runner OS
+              run: cat /etc/os-release
