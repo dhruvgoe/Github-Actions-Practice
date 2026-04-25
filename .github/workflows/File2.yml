@@ -13,8 +13,5 @@ jobs:
               run: |
                 cd Github-Actions-Practice
                 ls -la
-
-            - name: Running the code
-              run: |
-                    chmod +x new.sh
-                    ./new.sh
+                chmod +x new.sh
+                ./new.sh
