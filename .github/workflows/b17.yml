@@ -15,5 +15,5 @@ jobs:
             - name: myThirdStep-ListFiles
               run: ls -la
 
-            - name: myFourthStep-Show Runner
-              run: uname -a
+            - name: myFourthStep-Show Runner OS
+              run: cat /etc/os-release
