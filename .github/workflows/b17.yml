@@ -8,3 +8,6 @@ jobs:
         steps:                      # This is where you define the steps that will be executed as part of the job.  
             - name: myFirstStep
               run: echo "Hello World, This is my First job in my first workflow"
+
+            - name: mySecondStep-Calculationn
+              run: echo "Sum of 2 and 3 is $((2+3))"
