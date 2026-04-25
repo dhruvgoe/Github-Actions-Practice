@@ -11,3 +11,9 @@ jobs:
 
             - name: mySecondStep-Calculationn
               run: echo "Sum of 2 and 3 is $((2+3))"
+
+            - name: myThirdStep-ListFiles
+              run: ls -la
+
+            - name: myFourthStep-Show Runner
+              run: uname -a
