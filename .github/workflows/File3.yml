@@ -1,0 +1,23 @@
+name: Build & Push
+
+on: workflow_dispatch
+
+jobs:
+    buildandpush:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Cloning the Repository
+              run: git clone https://github.com/dhruvgoe/Github-Actions-Practice.git
+
+            - name: Building & Pushing the Docker Image
+              run: |
+                    cd Github-Actions-Practice
+                    docker build -t my-docker-image:latest .
+
+            - name: Loging into Docker Hub
+              run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+            - name: Tag and Push the Docker Image
+              run: |
+                    docker tag my-docker-image:latest ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
+                    docker push ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
