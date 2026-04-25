@@ -1,0 +1,20 @@
+name: myFile2WorkFlow
+
+on: push
+
+jobs:
+    myFile2Job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: putting code on runner
+              run: git clone https://github.com/dhruvgoe/Github-Actions-Practice.git
+
+            - name: Checking the Code
+              run: |
+                cd Github-Actions-Practice
+                ls -la
+
+            - name: Running the code
+              run: |
+                    chmod +x new.sh
+                    ./new.sh
