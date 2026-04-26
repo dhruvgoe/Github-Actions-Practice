@@ -26,3 +26,6 @@ jobs:
               with:
                 push: true
                 tags: ${{ secrets.DOCKER_USERNAME }}/my-docker-image-2:latest
+
+            - name: Verify AWS Runner
+              run: uname -r
