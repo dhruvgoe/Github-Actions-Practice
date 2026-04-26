@@ -1,6 +1,6 @@
 name: myFile2WorkFlow
 
-on: push
+on: workflow_dispatch
 
 jobs:
     myFile2Job:
